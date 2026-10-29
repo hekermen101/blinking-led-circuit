@@ -1,0 +1,38 @@
+[
+  {
+    "componentId": "bb_1",
+    "name": "Breadboard (Full Size)",
+    "quantity": 1,
+    "specs": "Standard solderless breadboard"
+  },
+  {
+    "componentId": "btn_1",
+    "name": "Push Button",
+    "quantity": 1,
+    "specs": "Tactile switch, 4-pin"
+  },
+  {
+    "componentId": "cap_1",
+    "name": "Capacitor",
+    "quantity": 1,
+    "specs": "1000uF electrolytic"
+  },
+  {
+    "componentId": "r_1",
+    "name": "Resistor",
+    "quantity": 1,
+    "specs": "360 Ohm"
+  },
+  {
+    "componentId": "led_1",
+    "name": "LED",
+    "quantity": 1,
+    "specs": "Red"
+  },
+  {
+    "componentId": "bat_1",
+    "name": "Battery",
+    "quantity": 1,
+    "specs": "9V"
+  }
+]

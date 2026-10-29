@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "parts": [
+    {
+      "id": "bb_1",
+      "type": "breadboard-full",
+      "parentId": null,
+      "terminals": [],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "arduino_1",
+      "type": "arduino-uno",
+      "parentId": null,
+      "terminals": [],
+      "position": {
+        "x": -0.09,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "led_1",
+      "type": "led-red",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "anode",
+          "connection": "2a"
+        },
+        {
+          "name": "cathode",
+          "connection": "3a"
+        }
+      ]
+    },
+    {
+      "id": "r_1",
+      "type": "resistor-330",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "pin1",
+          "connection": "3b"
+        },
+        {
+          "name": "pin2",
+          "connection": "7b"
+        }
+      ]
+    },
+    {
+      "id": "we_arduino_1_D8",
+      "type": "wire-end",
+      "parentId": "arduino_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "D8"
+        }
+      ]
+    },
+    {
+      "id": "we_led_1_anode",
+      "type": "wire-end",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "2b"
+        }
+      ]
+    },
+    {
+      "id": "we_r_1_pin2",
+      "type": "wire-end",
+      "parentId": "bb_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "7a"
+        }
+      ]
+    },
+    {
+      "id": "we_arduino_1_GND",
+      "type": "wire-end",
+      "parentId": "arduino_1",
+      "terminals": [
+        {
+          "name": "t1",
+          "connection": "GND"
+        }
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_1",
+      "color": "yellow",
+      "from": "we_arduino_1_D8",
+      "to": "we_led_1_anode"
+    },
+    {
+      "id": "w_3",
+      "color": "black",
+      "from": "we_r_1_pin2",
+      "to": "we_arduino_1_GND"
+    }
+  ]
+}

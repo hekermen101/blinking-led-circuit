@@ -1,0 +1,148 @@
+[
+  {
+    "order": 1,
+    "title": "Place the breadboard",
+    "description": "This step establishes the foundation for the circuit. The breadboard provides the solderless connection grid used to mount all components and route electrical signals between them.",
+    "instructions": "Take the full-size breadboard and place it on your work surface. Ensure the central gap (between columns e and f) runs horizontally. Orient the board so the power rails are on the top and bottom edges.",
+    "components": ["bb_1"],
+    "holes": [],
+    "highlightComponents": ["bb_1"],
+    "highlightPins": []
+  },
+  {
+    "order": 2,
+    "title": "Place the push button",
+    "description": "The push button acts as the user input for the circuit. It bridges the central gap to allow connections on both sides, serving as a switch to control the signal path.",
+    "instructions": "Pick up the tactile push button. Insert the four pins such that two pins go into the left bank and two into the right bank of row 8 and row 10. Specifically, place pins into holes 8e, 10e, 8f, and 10f. Press down until the button sits flush on the board.",
+    "components": ["btn_1"],
+    "holes": ["8e", "10e", "8f", "10f"],
+    "highlightComponents": ["btn_1"],
+    "highlightPins": ["A1", "A2", "B1", "B2"]
+  },
+  {
+    "order": 3,
+    "title": "Place the capacitor",
+    "description": "This 1000uF capacitor stabilizes the power supply. It smooths out voltage fluctuations and provides a local energy reservoir to prevent signal noise when the button is pressed.",
+    "instructions": "Identify the electrolytic capacitor's polarity: the negative leg is marked with a stripe on the body. Insert the positive leg (pin1) into hole 15f and the negative leg (pin2) into hole 16f. Ensure the stripe faces towards row 16.",
+    "components": ["cap_1"],
+    "holes": ["15f", "16f"],
+    "highlightComponents": ["cap_1"],
+    "highlightPins": ["pin1", "pin2"]
+  },
+  {
+    "order": 4,
+    "title": "Place the resistor",
+    "description": "The 360 Ohm resistor limits the current flowing to the LED. This protects the LED from burning out and ensures the brightness is within a safe operating range.",
+    "instructions": "Take the 360 Ohm resistor. Bend the leads to fit the breadboard spacing. Insert one lead (pin1) into hole 15h and the other lead (pin2) into hole 19h. Orientation does not matter for resistors.",
+    "components": ["r_1"],
+    "holes": ["15h", "19h"],
+    "highlightComponents": ["r_1"],
+    "highlightPins": ["pin1", "pin2"]
+  },
+  {
+    "order": 5,
+    "title": "Place the LED",
+    "description": "The red LED provides visual output. It lights up when current flows through it, indicating the circuit state. It must be connected in series with the resistor to limit current.",
+    "instructions": "Locate the red LED. The longer leg is the anode (positive) and the shorter leg is the cathode (negative). Insert the anode into hole 19i and the cathode into hole 20i. Double-check that the longer leg connects to the resistor at row 19.",
+    "components": ["led_1"],
+    "holes": ["19i", "20i"],
+    "highlightComponents": ["led_1"],
+    "highlightPins": ["anode", "cathode"]
+  },
+  {
+    "order": 6,
+    "title": "Place the battery",
+    "description": "The 9V battery provides the power source for the entire circuit. It supplies the necessary voltage to drive the LED and support the logic components.",
+    "instructions": "Place the 9V battery in its holder or position it near the breadboard. Ensure the terminals are accessible for wiring. The battery itself does not plug into the breadboard but connects via wires.",
+    "components": ["bat_1"],
+    "holes": [],
+    "highlightComponents": ["bat_1"],
+    "highlightPins": []
+  },
+  {
+    "order": 7,
+    "title": "Connect battery power",
+    "description": "This wire routes positive voltage from the battery to the input side of the push button. It establishes the power rail for the switch logic.",
+    "instructions": "Take a red wire. Connect one end to the positive terminal (VCC) of the battery and the other end to hole 8b on the breadboard. This brings 9V to the left side of the button.",
+    "components": ["bat_1", "bb_1"],
+    "holes": ["8b"],
+    "highlightComponents": ["we_bat_1_VCC", "we_bb_1_8b"],
+    "highlightPins": ["t1"],
+    "wires": [
+      {
+        "from": "we_bat_1_VCC",
+        "to": "we_bb_1_8b",
+        "color": "red"
+      }
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Connect button to capacitor",
+    "description": "This yellow wire carries the switched signal from the button output to the capacitor input. It allows the button to trigger the charging of the capacitor.",
+    "instructions": "Take a yellow wire. Insert one end into hole 10g and the other end into hole 15g. Ensure the wire lies flat across the board without crossing other components.",
+    "components": ["bb_1"],
+    "holes": ["10g", "15g"],
+    "highlightComponents": ["we_bb_1_10g", "we_bb_1_15g"],
+    "highlightPins": ["t1"],
+    "wires": [
+      {
+        "from": "we_bb_1_10g",
+        "to": "we_bb_1_15g",
+        "color": "yellow"
+      }
+    ]
+  },
+  {
+    "order": 9,
+    "title": "Ground the capacitor",
+    "description": "This wire connects the negative side of the capacitor to the ground rail. It completes the circuit for the capacitor, allowing it to filter noise properly.",
+    "instructions": "Take a black wire. Connect one end to hole 16g and the other end to the bottom negative power rail at position 1 (rail_bottom_negative_1).",
+    "components": ["bb_1"],
+    "holes": ["16g", "rail_bottom_negative_1"],
+    "highlightComponents": ["we_bb_1_16g", "we_bb_1_rail_bottom_negative_1"],
+    "highlightPins": ["t1"],
+    "wires": [
+      {
+        "from": "we_bb_1_16g",
+        "to": "we_bb_1_rail_bottom_negative_1",
+        "color": "black"
+      }
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Ground the LED",
+    "description": "This wire connects the LED cathode to the common ground rail. It provides a return path for the current flowing through the LED, completing the output circuit.",
+    "instructions": "Take a black wire. Connect one end to hole 20j and the other end to the bottom negative power rail at position 3 (rail_bottom_negative_3).",
+    "components": ["bb_1"],
+    "holes": ["20j", "rail_bottom_negative_3"],
+    "highlightComponents": ["we_bb_1_20j", "we_bb_1_rail_bottom_negative_3"],
+    "highlightPins": ["t1"],
+    "wires": [
+      {
+        "from": "we_bb_1_20j",
+        "to": "we_bb_1_rail_bottom_negative_3",
+        "color": "black"
+      }
+    ]
+  },
+  {
+    "order": 11,
+    "title": "Connect battery ground",
+    "description": "This final wire connects the battery negative terminal to the breadboard ground rail. It establishes the common ground reference required for the circuit to function.",
+    "instructions": "Take a black wire. Connect one end to the negative terminal (GND) of the battery and the other end to the bottom negative power rail at position 5 (rail_bottom_negative_5).",
+    "components": ["bat_1", "bb_1"],
+    "holes": ["rail_bottom_negative_5"],
+    "highlightComponents": ["we_bat_1_GND", "we_bb_1_rail_bottom_negative_5"],
+    "highlightPins": ["t1"],
+    "wires": [
+      {
+        "from": "we_bat_1_GND",
+        "to": "we_bb_1_rail_bottom_negative_5",
+        "color": "black"
+      }
+    ],
+    "notes": "Double-check all connections before powering up. Ensure the LED polarity is correct and the battery is connected properly."
+  }
+]
